@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
+/// Create a custom elevated button from a pair of widgets that serve as the button's
+/// [icon] and [label].
+///
+/// The icon and label are arranged in a row and padded by 12 logical pixels
+/// at the start, and 16 at the end, with an 8 pixel gap in between.
 class CustomIconButton extends StatelessWidget {
+  final bool enable;
   final IconData icon;
   final void Function() onPressed;
   final String label;
-  final bool enable;
   const CustomIconButton({
     super.key,
     required this.icon,

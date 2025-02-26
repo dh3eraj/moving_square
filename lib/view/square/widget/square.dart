@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+/// Create a [Square]  widget with specified width and height
+/// 
+/// required [value]
 class Square extends StatelessWidget {
   final double? width;
   final double? height;

@@ -5,7 +5,12 @@ import 'package:moving_square/config/routes/app_routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  ///Use the [PathUrlStrategy] to handle the browser URL.
+  ///
+  ///Removes **#** fromthe URL
   usePathUrlStrategy();
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -18,6 +23,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// Creates a [MaterialApp] that uses the [Router] instead of a [Navigator].
     return MaterialApp.router(
       title: "Moving Square",
       theme: ThemeData(
