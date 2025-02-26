@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:moving_square/view/square_view.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:moving_square/config/routes/app_routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
+
   runApp(const MyApp());
 }
 
@@ -10,10 +14,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
       title: "Moving Square",
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF288fee)),
+      ),
       debugShowCheckedModeBanner: false,
-      home: SquareView(),
+      routerConfig: AppRoutes.goRouter,
     );
   }
 }
