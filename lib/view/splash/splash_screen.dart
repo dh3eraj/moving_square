@@ -51,17 +51,20 @@ class _SplashScreenState extends State<SplashScreen>
       canPop: false,
       child: Scaffold(
         backgroundColor: Color(0xFFF7F7F7),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
+        body: Stack(
+          // mainAxisAlignment: MainAxisAlignment.end,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisSize: MainAxisSize.max,
           children: [
-            LottieBuilder(
-              lottie: AssetLottie(Lotties.splash),
-              controller: _animationController,
-              height: 500,
-              filterQuality: FilterQuality.high,
-              fit: BoxFit.fitHeight,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: LottieBuilder(
+                lottie: AssetLottie(Lotties.splash),
+                controller: _animationController,
+                height: 500,
+                filterQuality: FilterQuality.high,
+                fit: BoxFit.fitHeight,
+              ),
             ),
           ],
         ),
