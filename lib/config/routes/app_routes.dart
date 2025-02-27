@@ -21,6 +21,9 @@ class AppRoutes {
     ///
     /// provide value if [initialLocation] is other than /
     initialLocation: "/",
+    redirect: (context, state) {
+      return state.path ?? "/";
+    },
     routes: [
       GoRoute(
         path: "/",
