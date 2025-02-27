@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:go_router/go_router.dart';
 import 'package:moving_square/view/splash/splash_screen.dart';
 import 'package:moving_square/view/square/moving_square.dart';
@@ -23,12 +21,6 @@ class AppRoutes {
     ///
     /// provide value if [initialLocation] is other than /
     initialLocation: "/",
-    redirect: (context, state) {
-      log(state.fullPath.toString());
-      log(state.path.toString());
-      log(state.matchedLocation.toString());
-      return state.matchedLocation ;
-    },
     routes: [
       GoRoute(
         path: "/",
